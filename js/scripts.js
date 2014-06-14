@@ -3,7 +3,7 @@ var pigLatin = function (message) {
 	var consonantMatch = /^[bcdfghjklmnpqrstvxyz]*/;
 	var quMatch = /^qu/;
 	var consonantQuMatch = /^[bcdfghjklmnprstvxyz]*qu/;
-	for (var index = 0; index < 1; index++) {
+	for (var index = 0; index < message.length; index++) {
 		if (vowelMatch.test(message)) {
 			message = message + "ay";
 			return message;
@@ -20,10 +20,11 @@ var pigLatin = function (message) {
 		} else if (consonantMatch.test(message)) {
 			var match = consonantMatch.exec(message);
 			message = message.replace(match,"");
-			message = message + match + "ay";
+			message = message + match + "ay";	
 			return message;
 		} 
-	}	
 
+	}
+	
 };
 
